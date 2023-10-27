@@ -105,6 +105,15 @@
             text-transform: capitalize;
             margin: 3px;
         }
+        #o_d_p1{
+            display: none;
+            margin: auto;
+            font-size:20px;
+            border-redious: 10px;
+            background-color: #f5f5f5;
+            padding:10px;
+            width:300px;
+        }
         select{
             text-transform: capitalize;
         }
@@ -154,6 +163,7 @@
                 </div>
             </div>
         </div>
+<p id="o_d_p1"></p>
 
         <div class="output_display">
             <p id="o_d_p">Raman And Tarun Lohar</p>
@@ -207,9 +217,18 @@
 
         const sponev = document.querySelector("#person1").value;
         const sptwov = document.querySelector("#person2").value;
-
+        const o_d_p = document.querySelector("#o_d_p")
+        const o_d_p1 = document.querySelector("#o_d_p1")
+        o_d_p1.style.display = "none"
+        
         i = sponev
         j = sptwov
+
+        if(sponev==sptwov){
+           o_d_p1.innerHTML = "Please Select Different Person" 
+            o_d_p1.style.display = "block"
+            output_display.style.display = "none"
+        }
 
 
         const name1 = localStorage.getItem("Name" + i);
@@ -286,7 +305,8 @@
         }
 
 
-        document.querySelector("#o_d_p").innerHTML = `The Difference In Age Of ${name1} And ${name2} Is`
+        
+        o_d_p.innerHTML = `The Difference In Age Of ${name1} And ${name2} Is`
         document.querySelector("#outy").value = Outy
         document.querySelector("#outm").value = Outm
         document.querySelector("#outd").value = Outd
