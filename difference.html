@@ -112,7 +112,10 @@
             text-align: center;
             font-size: 20px;
         }
-        .null{
+        #null{
+            display:none;
+        }
+        #Null{
             display:none;
         }
     </style>
@@ -192,7 +195,7 @@
             const option = document.createElement("option");
             option.value = i;
             option.text = names;
-            option.classlist.add(names);
+            option.id = names;
             select.appendChild(option);
         });
     }
